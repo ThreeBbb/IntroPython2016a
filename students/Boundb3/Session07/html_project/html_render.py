@@ -14,7 +14,7 @@ class Element(object):
     #class attributes
     tag = "element tag"
     indent = "    "
-    print("hi from class element")
+    #print("hi from class element")
     #content = []
 
 

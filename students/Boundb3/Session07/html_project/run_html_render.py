@@ -195,13 +195,15 @@ render_page(page, "test_html_output7a.html")
 '''
 page = hr.Html()
 
-
+#make and build the head
 head = hr.Head()
 head.append( hr.Meta(charset="UTF-8") )
 head.append(hr.Title("PythonClass = Revision 1087:"))
 
+#tuck head into the page
 page.append(head)
 
+#create and build the body
 body = hr.Body()
 
 body.append( hr.H(2, "PythonClass - Class 6 example") )
