@@ -7,7 +7,7 @@ class Circle (object):
     def __init__(self,radius,*args,**kwargs):
         self.radius = radius
         self.diameter = radius * 2
-        self.area = 3.14 * (radius * radius)
+        self._area = 3.14 * (radius * radius)
 
      ################################ radius
     @ property
@@ -35,13 +35,34 @@ class Circle (object):
         self._diameter = value
 
      ################################ area
+    @ property
+    def area(self):
+        return self._area
 
-    # def area(self):
-    #     return self._area
-    #
-    #
-    # def area(self,value):
-    #     raise AttributeError
+    @ area.setter
+    def area(self,value):
+        print("Don't change the area - change the radius: AttributeError")
+        # try:
+        #     return self._area
+        # except Exception as e:
+        #     print(e)
+        #     if e == "AttributeError":
+        #         print(e)
+        #     else:
+        #         print ("some kind of error.  Details: ", e)
+        # print("AGAIN - don't do this: change the area - change the radius: AttributeError")
+        # return "AttributeError"
+
+
+    def from_diameter(self,diameter_value):
+        radius = diameter_value /2
+        radius = self.__init__(radius)
+
+
+
+
+
+
 
 
 
@@ -64,3 +85,9 @@ print("c1's radius is: {} and diameter is {} ".format(c1.radius, c1.diameter))
 print("c1.area is {}".format(c1.area))
 c1.area = 14
 print("c1.area is {}".format(c1.area))
+
+# c4 = Circle.from_diameter(8)
+# print("c4's radius is: {} and diameter is {} ".format(c4.radius, c4.diameter))
+
+cd = Circle.from_diameter(8)
+print("cd's radius is: {} and diameter is  ".format(cd.radius))
